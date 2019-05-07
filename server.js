@@ -4,13 +4,13 @@ console.log("server started");
 var Random = 0;
 io.on("connection",function(socket){
     console.log("Client connected");
-    Random = Math.floor(Math.random()*5);
+    Random = Math.floor(Math.random()*100);
     socket.on("send",function(num){
         if(num.textin == Random)
         {
             socket.emit("win");
             socket.broadcast.emit('Over');
-            Random = Math.floor(Math.random()*5);
+            Random = Math.floor(Math.random()*100);
         }else if (num.textin > Random)
         {
             data = {
@@ -34,6 +34,6 @@ io.on("connection",function(socket){
     });
     socket.on("disconnect",function()
     {
-        console.log("mclient disconnectiss");
+        console.log("client disconnectiss");
     });
 })
