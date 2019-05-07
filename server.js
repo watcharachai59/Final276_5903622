@@ -4,13 +4,13 @@ console.log("server started");
 var Random = 0;
 io.on("connection",function(socket){
     console.log("Client connected");
-    Random = Math.floor(Math.random()*100);
+    Random = Math.floor(Math.random()*3);
     socket.on("send",function(num){
         if(num.textin == Random)
         {
             socket.emit("win");
             socket.broadcast.emit('Over');
-            Random = Math.floor(Math.random()*100);
+            Random = Math.floor(Math.random()*3);
         }else if (num.textin > Random)
         {
             data = {
