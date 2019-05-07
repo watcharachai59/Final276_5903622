@@ -1,4 +1,4 @@
-var io = require('socket.io')(process.env.port || 3000);
+var io = require('socket.io')(process.env.port||3000);
 console.log("server started");
 var Random = 0;
 io.on("connection",function(socket){
