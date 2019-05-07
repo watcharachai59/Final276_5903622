@@ -13,13 +13,13 @@ io.on("connection",function(socket){
         }else if (num.textin > Random)
         {
             data = {
-                Textout:"มากไป"
+                Textout:" มากไป "
             }
             socket.emit("miss",data);
         }else if (num.textin < Random)
         {
             data2 = {
-                Textout:"น้อยไป"
+                Textout:" น้อยไป "
             }
             socket.emit("miss",data2);
         }
